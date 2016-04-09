@@ -1,0 +1,1821 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Angular 2 Master Class - Jump Start Tutorial | thoughtram</title>
+
+    <meta name="description" content="Angular 2 Master Class - Getting Started">
+    <meta name="author" content="thoughtram">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/thoughtram.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <script src="vendor/angular.js"></script>
+    <style>
+      foo-code {
+        padding: 0.8em;
+        background: #eee;
+        display: block;
+        color: #aaa;
+      }
+    </style>
+  </head>
+
+  <body ng-app="slides">
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section class="deck-slide" data-background-image="/img/thoughtram-polygons.png" background-repeat="no-repeat">
+          <h1>Angular 2 Master Class</h1>
+          <h3>Jump Start Tutorial</h3>
+        </section>
+
+        <section class="sub-section-slide" data-background-transition="slide" data-background="#80B4C4">
+          <h2>Introduction</h2>
+        </section>
+
+        <section>
+          <h2 class="fragment">Angular 2?</h2>
+          <ul>
+            <li class="fragment">The next major version of the Angular framework</li>
+            <li class="fragment">Rather a development platform than just a framework</li>
+            <li class="fragment">Mobile First, future ready, powered by open source community</li>
+            <li class="fragment">Faster, better tooling, more flexible, ...</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Angular 2 Goals</h2>
+          <ul>
+            <li class="fragment">Built with mobile in mind</li>
+            <li class="fragment">Flexible development, developers decide which language to use</li>
+            <li class="fragment">Make it run in different environments</li>
+            <li class="fragment">Be even faster, take advantage of immutables and observables</li>
+            <li class="fragment">Simple, expressive and easier to reason about</li>
+            <li class="fragment">...</li>
+          </ul>
+        </section>
+
+        <section class="image-slide">
+          <h2>Performance</h2>
+          <img class="fragment" src="images/a2-performance-1.svg">
+        </section>
+        <section class="image-slide">
+          <h2>Performance</h2>
+          <img src="images/a2-performance-2.svg">
+        </section>
+        <section class="image-slide">
+          <h2>Performance</h2>
+          <img src="images/a2-performance-3.svg">
+        </section>
+
+
+        <section class="image-slide">
+          <h2>Languages</h2>
+          <img src="images/a2-languages-1.svg">
+        </section>
+
+        <section class="image-slide">
+          <h2>Languages</h2>
+          <img src="images/a2-languages-2.svg">
+        </section>
+
+        <section class="image-slide">
+          <h2>Languages</h2>
+          <img src="images/a2-languages-3.svg">
+        </section>
+
+        <section class="image-slide">
+          <h2>Languages</h2>
+          <img src="images/a2-languages-4.svg">
+        </section>
+
+        <section>
+          <h2>Useful Resources</h2>
+        </section>
+
+        <section data-state="window-background" data-background-transition="none" data-background="images/angular.io.png">
+        </section>
+
+        <section data-state="window-background" data-background-transition="none" data-background="images/exploring-angular-2.png">
+        </section>
+
+        <section data-state="window-background" data-background-transition="none" data-background="images/gitter.png">
+        </section>
+
+        <section class="sub-section-slide" data-background-transition="slide" data-background="#80B4C4">
+          <h2>ES2015/TypeScript Basics</h2>
+        </section>
+
+        <section class="image-slide">
+          <img class="fragment" src="images/ts-es2015-1.svg">
+        </section>
+        <section class="image-slide">
+          <img src="images/ts-es2015-2.svg">
+        </section>
+        <section class="image-slide">
+          <img src="images/ts-es2015-3.svg">
+        </section>
+
+        <section>
+          <h2>Classes</h2>
+          <p>Syntactic sugar for JavaScript prototypes introduced in ES2015.</p>
+            <pre class="fragment" ng-non-bindable style="margin-top: 1em; font-size: 0.85em;"><code>class Car { 
+
+  manufacturer:string;
+
+  constructor(manufacturer:string = 'BMW') {
+    this.manufacturer = manufacturer;
+  }
+
+  drive(miles:number) {}
+}
+            
+let bmw = new Car();</code></pre>
+        </section>
+
+        <section>
+          <h2>Classes</h2>
+          <p>Syntactic sugar for JavaScript prototypes introduced in ES2015.</p>
+            <pre ng-non-bindable style="font-size: 0.85em; margin-top: 1em;"><foo-code>class Car { 
+
+  <span style="color:#000;">manufacturer:string;</span>
+
+  constructor(manufacturer:string = 'BMW') {
+    this.manufacturer = manufacturer;
+  }
+
+  drive(miles:number) {}
+}
+            
+let bmw = new Car();</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Classes</h2>
+          <p>Syntactic sugar for JavaScript prototypes introduced in ES2015.</p>
+            <pre ng-non-bindable style="font-size: 0.85em; margin-top: 1em;"><foo-code>class Car { 
+
+  manufacturer:string;
+
+  <span style="color: #000;">constructor(manufacturer:string = 'BMW') {
+    this.manufacturer = manufacturer;
+  }</span>
+
+  drive(miles:number) {}
+}
+            
+let bmw = new Car();</foo-code></pre>
+        </section>
+
+
+        <section>
+          <h2>Classes</h2>
+          <p>Syntactic sugar for JavaScript prototypes introduced in ES2015.</p>
+            <pre ng-non-bindable style="font-size: 0.85em; margin-top: 1em;"><foo-code>class Car { 
+
+  manufacturer:string;
+
+  constructor(manufacturer:string = 'BMW') {
+    this.manufacturer = manufacturer;
+  }
+
+  <span style="color:#000;">drive(miles:number) {}</span>
+}
+            
+let bmw = new Car();</foo-code></pre>
+        </section>
+        <section>
+          <h2>Classes</h2>
+          <p>Syntactic sugar for JavaScript prototypes introduced in ES2015.</p>
+            <pre ng-non-bindable style="font-size: 0.85em; margin-top: 1em;"><foo-code>class Car { 
+
+  manufacturer:string;
+
+  constructor(manufacturer:string = 'BMW') {
+    this.manufacturer = manufacturer;
+  }
+
+  drive(miles:number) {}
+}
+            
+<span style="color: #000;">let bmw = new Car();</span></foo-code></pre>
+        </section>
+
+        <section>
+          <pre ng-non-bindable style="font-size: 0.85em;"><code>class Car { ... }
+
+class Convertible extends Car {
+
+}
+            
+let cabrio = new Convertible();</code></pre>
+        </section>
+
+        <section>
+          <pre ng-non-bindable style="font-size: 0.85em;"><foo-code>class Car { ... }
+
+<span style="color: #000;">class Convertible extends Car {
+
+}</span>
+            
+let cabrio = new Convertible();</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Modules</h2>
+          <p>ES2015 brings a module system to the table that enables us to write modular code.</p>
+          <pre class="fragment"ng-non-bindable style="font-size: 0.85em; margin-top: 1em;"><code>// Car.js
+
+export class Car { ... }
+
+export class Convertible extends Car {
+  ...
+}</code></pre>
+        </section>
+
+        <section>
+          <h2>Modules</h2>
+          <p>ES2015 brings a module system to the table that enables us to write modular code.</p>
+          <pre ng-non-bindable style="font-size: 0.85em; margin-top: 1em;"><foo-code>// Car.js
+
+<span style="color: #000;">export</span> class Car { ... }
+
+<span style="color: #000;">export</span> class Convertible extends Car {
+  ...
+}</code></pre>
+        </section>
+
+        <section>
+          <h2>Modules</h2>
+          <p>ES2015 brings a module system to the table that enables us to write modular code.</p>
+          <pre ng-non-bindable style="font-size: 0.85em; margin-top: 1em;"><code>// App.js
+
+import {Car, Convertible} from 'Car';
+
+let bmw = new Car();
+let cabrio = new Convertible();</code></pre>
+        </section>
+
+        <section>
+          <h2>Modules</h2>
+          <p>ES2015 brings a module system to the table that enables us to write modular code.</p>
+          <pre ng-non-bindable style="font-size: 0.85em; margin-top: 1em;"><foo-code>// App.js
+
+<span style="color: #000;">import {Car, Convertible} from 'Car';</span>
+
+let bmw = new Car();
+let cabrio = new Convertible();</code></pre>
+        </section>
+
+        <section>
+          <h2>Modules</h2>
+          <p>ES2015 brings a module system to the table that enables us to write modular code.</p>
+          <pre ng-non-bindable style="font-size: 0.85em; margin-top: 1em;"><foo-code>// App.js
+
+import {Car, Convertible} from 'Car';
+
+<span style="color: #000;">let bmw = new Car();
+let cabrio = new Convertible();</span></code></pre>
+        </section>
+
+        <section>
+          <h2>Type Annotations</h2>
+          <p>Type annotations provide optional static typing. Applied using <code>: T</code> syntax</p>
+          <pre class="fragment" ng-non-bindable style="font-size: 0.85em; margin-top: 1em;"><code>var height:number = 6;
+var isDone:boolean = true;
+var name:string = 'thoughtram';
+          
+var list:number[] = [1, 2, 3];
+var list:Array&lt;number&gt; = [1, 2, 3];
+          
+function add(x: number, y: number): number {
+  return x+y;
+}</code></pre>
+        </section>
+
+        <section>
+          <h2>Type Annotations</h2>
+          <p>Type annotations provide optional static typing. Applied using <code>: T</code> syntax</p>
+          <pre ng-non-bindable style="font-size: 0.85em; margin-top: 1em;"><foo-code><span style="color: #000;">var height:number = 6;
+var isDone:boolean = true;
+var name:string = 'thoughtram';</span>
+          
+var list:number[] = [1, 2, 3];
+var list:Array&lt;number&gt; = [1, 2, 3];
+          
+function add(x: number, y: number): number {
+  return x+y;
+}</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Type Annotations</h2>
+          <p>Type annotations provide optional static typing. Applied using <code>: T</code> syntax</p>
+          <pre ng-non-bindable style="font-size: 0.85em; margin-top: 1em;"><foo-code>var height:number = 6;
+var isDone:boolean = true;
+var name:string = 'thoughtram';
+          
+<span style="color: #000;">var list:number[] = [1, 2, 3];
+var list:Array&lt;number&gt; = [1, 2, 3];</span>
+          
+function add(x: number, y: number): number {
+  return x+y;
+}</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Type Annotations</h2>
+          <p>Type annotations provide optional static typing. Applied using <code>: T</code> syntax</p>
+          <pre ng-non-bindable style="font-size: 0.85em; margin-top: 1em;"><foo-code>var height:number = 6;
+var isDone:boolean = true;
+var name:string = 'thoughtram';
+          
+var list:number[] = [1, 2, 3];
+var list:Array&lt;number&gt; = [1, 2, 3];
+          
+function add(<span style="color: #000;">x: number, y: number</span>): number {
+  return x+y;
+}</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Type Annotations</h2>
+          <p>Type annotations provide optional static typing. Applied using <code>: T</code> syntax</p>
+          <pre ng-non-bindable style="font-size: 0.85em; margin-top: 1em;"><foo-code>var height:number = 6;
+var isDone:boolean = true;
+var name:string = 'thoughtram';
+          
+var list:number[] = [1, 2, 3];
+var list:Array&lt;number&gt; = [1, 2, 3];
+          
+function add(x: number, y: number)<span style="color: #000;">: number</span> {
+  return x+y;
+}</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Type Annotations</h2>
+          <p>Type annotations provide optional static typing. Applied using <code>: T</code> syntax</p>
+          <pre ng-non-bindable style="font-size: 0.85em;  margin-top: 1em;"><code>var height:number = 6;
+var isDone:boolean = true;
+var name:string = 'thoughtram';
+          
+var list:number[] = [1, 2, 3];
+var list:Array&lt;number&gt; = [1, 2, 3];
+          
+function add(x: number, y: number): number {
+  return x+y;
+}</code></pre>
+        </section>
+
+
+        <section class="statement-slide" data-background="#123742">
+          <h3>Our first Angular 2 Component</h3>
+        </section>
+
+        <section>
+            <pre class="fragment" ng-non-bindable style="font-size: 0.85em; line-height: 40px;"><code>
+
+
+
+
+
+
+class ContactsApp {
+
+}
+
+
+</code></pre>
+        </section>
+        <section>
+            <pre ng-non-bindable style="font-size: 0.85em; line-height: 40px;"><code>import {Component} from 'angular2/core';
+
+
+@Component({
+  selector: 'contacts-app',
+  template: 'Hello World!'
+})
+class ContactsApp {
+
+}
+
+            </code></pre>
+        </section>
+
+        <section>
+          <p style="font-size: 1.3em;">How to instantiate that component?</p>
+        </section>
+
+        <section>
+            <pre ng-non-bindable style="font-size: 0.85em; line-height: 40px;"><code>import {Component} from 'angular2/core';
+
+
+@Component({
+  selector: 'contacts-app',
+  template: 'Hello World!'
+})
+class ContactsApp {
+
+}
+
+
+</code></pre>
+        </section>
+
+        <section>
+            <pre ng-non-bindable style="font-size: 0.85em; line-height: 40px;"><code>import {Component} from 'angular2/core';
+import {bootstrap} from 'angular2/platform/browser';
+
+@Component({
+  selector: 'contacts-app',
+  template: 'Hello World!'
+})
+class ContactsApp {
+
+}
+
+bootstrap(ContactsApp);
+</code></pre>
+        </section>
+
+        <section>
+          <pre ng-non-bindable style="font-size: 0.85em; line-height: 40px;"><foo-code>import {Component} from 'angular2/core';
+import {<span style="color: #000;">bootstrap</span>} from <span style="color: #000;">'angular2/platform/browser'</span>;
+
+@Component({
+  selector: 'contacts-app',
+  template: 'Hello World!'
+})
+class ContactsApp {
+
+}
+
+<span style="color: #000;">bootstrap(ContactsApp);</span>
+</foo-code></pre>
+        </section>
+
+        <section>
+          <p>In a real world app, we put <strong>bootstrap()</strong> in a separate file to make the root component easier to test.</p>
+        </section>
+
+        <section>
+            <pre ng-non-bindable style="font-size: 0.85em; line-height: 40px;"><code>&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My first Angular 2 App!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+
+
+    &lt;script src="..."&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <section>
+            <pre ng-non-bindable style="font-size: 0.85em; line-height: 40px;"><code>&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My first Angular 2 App!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+    <contacts-app>Loading...</contacts-app>
+
+    &lt;script src="..."&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+
+        <section>
+          <h2>Bootstrapping Tasks</h2>
+
+          <p>Angular performs the following tasks to bootstrap an application (simplified):</p>
+
+          <ol>
+            <li class="fragment">Upgrades located DOM element into Angular component</li>
+            <li class="fragment">Creates injector for the application</li>
+            <li class="fragment">Creates (emulated) Shadow DOM on component's host element</li>
+            <li class="fragment">Instantiates specified component</li>
+            <li class="fragment">Performs change detection</li>
+          <ol>
+
+        </section>
+
+        <section>
+          <h3><a href="http://plnkr.co/edit/yq1WyTcVumcPvImglBqM?p=preview">Demo &rarr;</a></h3>
+        </section>
+
+        <section class="statement-slide" data-background="#123742">
+          <h3>Exercise 1: Bootstrap your first app</h3>
+        </section>
+
+        <section class="sub-section-slide" data-background-transition="slide" data-background="#80B4C4">
+          <h2>Using directives</h2>
+        </section>
+
+        <section>
+          <div class="fragment">
+          <h2>Directive Dependencies</h2>
+
+          <p>Directive dependencies are defined in the <code>directives</code> property.</p>
+
+            <pre ng-non-bindable style="font-size: 0.65em!important; margin-top: 1em; line-height: 40px;"><code>
+
+@Component({
+  selector: 'contacts-app',
+  template: ''
+
+})
+class ContactsApp {}
+</code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>Directive Dependencies</h2>
+
+          <p>Directive dependencies are defined in the <code>directives</code> property.</p>
+
+          <pre ng-non-bindable style="font-size: 0.65em!important; margin-top: 1em; line-height: 40px;"><code>import {ContactsHeaderComponent} from '...';
+
+@Component({
+  selector: 'contacts-app',
+  template: '<contacts-header></contacts-header>',
+  directives: [ContactsHeaderComponent]
+})
+class ContactsApp {}
+</code></pre>
+        </section>
+
+        <section>
+          <h2>Directive Dependencies</h2>
+
+          <p>Directive dependencies are defined in the <code>directives</code> property.</p>
+
+          <pre ng-non-bindable style="font-size: 0.65em!important; margin-top: 1em; line-height: 40px;"><foo-code><span style="color: #000;">import {ContactsHeaderComponent} from '...';</span>
+
+@Component({
+  selector: 'contacts-app',
+  template: '<span style="color: #000;">&lt;contacts-header&gt;&lt;/contacts-header&gt;</span>',
+  <span style="color: #000;">directives: [ContactsHeaderComponent]</span>
+})
+class ContactsApp {}
+</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Header Component</h2>
+          <pre ng-non-bindable style="line-height: 40px;"><code>import {Component} from 'angular2/core';
+
+@Component({
+  selector: 'contacts-header',
+  template: `
+    <div class="some class">
+      <h1>Contacts App</h1>
+    </div>
+  `
+})
+export class ContactsHeaderComponent {
+
+}</code></pre>
+        </section>
+
+        <section>
+          <h3><a href="http://plnkr.co/edit/OsXhTSbujkRmiUZ2vkqG?p=preview">Demo &rarr;</a></h3>
+        </section>
+
+        <section class="statement-slide" data-background="#123742">
+          <h3>Exercise 2: Using Directives</h3>
+        </section>
+
+        <section class="sub-section-slide" data-background-transition="slide" data-background="#80B4C4">
+          <h2>Displaying Data</h2>
+        </section>
+
+        <section>
+          <div class="fragment">
+            <p>We can bind data to elements in HTML templates and Angular automatically updates the UI as data changes.</p>
+          </div>
+        </section>
+
+        <section>
+            <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px;"><code>@Component({
+  selector: 'contacts-app',
+  template: 'Hello {{name}}'
+})
+class ContactsApp {
+  name:string = 'Angular 2';
+}
+</code></pre>
+        </section>
+
+        <section>
+            <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px;"><foo-code>@Component({
+  selector: 'contacts-app',
+  <span style="color: #000;">template: 'Hello {{name}}'</span>
+})
+class ContactsApp {
+  <span style="color: #000;">name:string = 'Angular 2';</span>
+}
+</foo-code></pre>
+        </section>
+
+        <section>
+          <h3>Let's display our first contact!</h3>
+        </section>
+
+        <section>
+          <h2>Defining a Contact</h2>
+          <p>To enable type safety during compilation, we can define interfaces using the <code>interface</code> key word</p>
+
+          <pre class="fragment" ng-non-bindable style="font-size: 0.7em!important;line-height: 40px; margin-top: 2em;"><code>interface Contact {
+  id: Number;
+  name: string;
+  email: string;
+  phone: string;
+  ...
+}</code></pre>
+        </section>
+
+        <section>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px;"><code>import {Contact} from './models/contact';
+            
+@Component(...)
+class ContactsApp {
+
+
+
+
+
+
+
+}
+</code></pre>
+        </section>
+
+        <section>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px;"><code>import {Contact} from '...';
+            
+@Component(...)
+class ContactsApp {
+  contact: Contact = {
+    id: 1,
+    name: 'Christoph',
+    email: 'chris@burdorf.io',
+    image: 'path/to/image',
+    ...
+  }
+}
+</code></pre>
+        </section>
+
+        <section>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px;"><code>@Component({
+  selector: 'contacts-app',
+  template: `
+    <div>
+      <img [src]="contact.image">
+      <span>
+        {{contact.name}}
+      </span>
+    </div>
+  `
+})
+class ContactsApp {
+  ...
+}
+</code></pre>
+        </section>
+
+        <section>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px;"><foo-code>@Component({
+  selector: 'contacts-app',
+  template: `
+    <span style="color: #000;">&lt;div&gt;
+      &lt;img [src]="contact.image"&gt;
+      &lt;span&gt;
+        {{contact.name}}
+      &lt;/span&gt;
+    &lt;/div&gt;</span>
+  `
+})
+class ContactsApp {
+  ...
+}
+</foo-code></pre>
+        </section>
+
+        <section class="statement-slide" data-background="#123742">
+          <h3>Exercise 3: Display first contact</h3>
+        </section>
+
+        <section class="sub-section-slide" data-background-transition="slide" data-background="#80B4C4">
+          <h2>Property Binding Explained</h2>
+        </section>
+
+        <section>
+          <div class="fragment">
+          <h2>Props and Attrs</h2>
+          <p>Attributes are <strong>always</strong> strings and only set up the initial value</p>
+          <pre ng-non-bindable style="font-size: 0.9em; margin-top: 1.5em; line-height: 40px;"><code>&lt;input value="Christoph"&gt;
+&lt;img src="path/to/img.png"&gt;</code></pre>
+          </div>
+        </section>
+          
+        <section>
+          <h2>Props and Attrs</h2>
+          <p>Properties can be <strong>any</strong> value and changed imperatively at run-time</p>
+          <pre ng-non-bindable style="font-size: 0.9em; margin-top: 1.5em; line-height: 40px;"><code>var input = document.querySelector('input');
+input.value; // 'Christoph'
+
+var img = document.querySelector('img');
+img.src; // 'path/to/img.png'</code></pre>
+        </section>
+
+        <section>
+          <h2>Props and Attrs</h2>
+          <p>Properties and attributes values aren't always reflected automatically</p>
+          <pre ng-non-bindable style="font-size: 0.9em; margin-top: 1.5em; line-height: 40px;"><code>var input = document.querySelector('input');
+input.value; // 'Christoph'
+
+input.value = 'Pascal';
+input.getAttribute('value'); // 'Christoph'
+</code></pre>
+        </section>
+
+        <section>
+          <h2>Props and Attrs</h2>
+          <p>Properties and attributes values aren't always reflected automatically</p>
+          <pre ng-non-bindable style="font-size: 0.9em; margin-top: 1.5em; line-height: 40px;"><foo-code>var input = document.querySelector('input');
+input.value; // 'Christoph'
+
+<span style="color: #000;">input.value = 'Pascal';
+input.getAttribute('value'); // 'Christoph'</span>
+</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Property Binding</h2>
+          <p>Angular 2 binds to element properties instead of attributes in order to work with <strong>any</strong> element</p>
+          <pre ng-non-bindable style="margin-top: 1.5em; font-size: 0.9em; line-height: 40px;"><code><div title="thoughtram"></div>
+<div [title]="'thoughtram'"></div>
+<div [title]="user.firstname"></div></code></pre>
+          <p class="fragment" style="margin-top: 1em;">[] - syntax is the declarative way of writing to a property</p>
+        </section>
+
+        <section class="sub-section-slide" data-background-transition="slide" data-background="#80B4C4">
+          <h2>Creating a list</h2>
+        </section>
+
+        <section class="image-slide">
+          <img class="fragment" src="images/contacts-list.svg">
+        </section>
+
+        <section>
+          <pre ng-non-bindable style="font-size: 0.9em; line-height: 40px;"><code>var CONTACTS: Contact[] = [
+  { id: 1, firstname: 'Christoph', ...},
+  { id: 2, firstname: 'Pascal', ...},
+  { id: 3, firstname: 'Julie', ...},
+  { id: 4, firstname: 'Igor', ...},
+  ...
+];
+</code></pre>
+        </section>
+
+        <section>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px;"><code>import {CONTACTS} from '...';
+            
+@Component({
+  selector: 'contacts-app',
+  template: `
+    <ul>
+      <li>
+        <!-- each contact goes here -->
+      </li>
+    </ul>
+  `
+})
+class ContactsApp {
+  contacts: Contact[] = CONTACTS;
+}
+</code></pre>
+        </section>
+
+        <section>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px;"><foo-code><span style="color: #000;">import {CONTACTS} from '...';</span>
+            
+@Component({
+  selector: 'contacts-app',
+  template: `
+    <span style="color: #000;">&lt;ul&gt;
+      &lt;li&gt;
+        &lt;!-- each contact goes here --&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;</span>
+  `
+})
+class ContactsApp {
+  <span style="color: #000;">contacts: Contact[] = CONTACTS;</span>
+}
+</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Lists with <code>ngFor</code></h2>
+          <p>The <code>NgFor</code> directive instantiates a template once per item from an iterable.</p>
+
+          <pre ng-non-bindable style="margin-top: 1.5em; line-height: 40px;"><code>&lt;li *ngFor="#item of items"&gt;...&lt;/li&gt;</code></pre>
+
+          <ul>
+            <li class="fragment"><code>*</code> - Indicates template directive</li>
+            <li class="fragment"><code>items</code> - Expression evaluating to collection</li>
+            <li class="fragment"><code>#item</code> - Local variable for each iterator</li>
+          </ul>
+        </section>
+
+        <section>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px;"><foo-code>@Component({
+  selector: 'contacts-app',
+  template: `
+    <span style="color: #000;">&lt;ul&gt;
+      &lt;li&gt;
+
+        &lt;!-- each contact goes here --&gt;
+
+
+      &lt;/li&gt;
+    &lt;/ul&gt;</span>
+  `
+})
+class ContactsApp {
+  ...
+}
+</foo-code></pre>
+        </section>
+
+        <section>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px;"><foo-code>@Component({
+  selector: 'contacts-app',
+  template: `
+    <span style="color: #000;">&lt;ul&gt;
+      &lt;li *ngFor="#contact of contacts"&gt;
+        &lt;img [src]="contact.image"&gt;
+        &lt;span&gt;
+          {{contact.name}}
+        &lt;/span&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;</span>
+  `
+})
+class ContactsApp {
+  ...
+}
+</foo-code></pre>
+        </section>
+
+        <section>
+          <h3><a href="http://plnkr.co/edit/zIoqCTSfDybUNi6bS4e8?p=preview">Demo &rarr;</a></h3>
+        </section>
+
+        <section class="statement-slide" data-background="#123742">
+          <h3>Exercise 4: Display list of contacts</h3>
+        </section>
+
+        <section class="sub-section-slide" data-background-transition="slide" data-background="#80B4C4">
+          <h2>Services and DI</h2>
+        </section>
+
+        <section>
+          <div class="fragment">
+            <h2>Services</h2>
+            <p>We can create services in Angular using <strong>ES2015 classes</strong>.</p>
+            <pre class="fragment" ng-non-bindable style="margin-top: 1.5em; font-size: 1.2em; line-height: 40px;"><code>import {Injectable} from 'angular2/core';
+
+@Injectable()
+export class ContactsService {
+
+  private contacts: Contact[] = CONTACTS;
+
+  getContacts() {
+    return this.contacts;
+  }
+}
+</code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>Configuring the Injector</h2>
+
+          <p>A component's <code>providers</code> accepts a list of providers to configure the injector.</p>
+          <pre ng-non-bindable style="margin-top: 1.5em; font-size: 1.2em; line-height: 40px;"><code>@Component({
+  selector: 'contacts-app',
+  providers: [ContactsService]
+  ...
+})
+class ContactsApp {}</code></pre>
+        </section>
+
+        <section>
+          <h2>Injecting Dependencies</h2>
+
+          <p>Dependencies can be injected using TypeScript type annotations.</p>
+          <pre ng-non-bindable style="margin-top: 1.5em; font-size: 1.2em; line-height: 40px;"><code>@Component(...)
+class ContactsApp {
+
+  contacts: Contact[];
+
+  constructor(contactsService: ContactsService) {
+    this.contacts = contactsService.getContacts();
+  }
+}
+</code></pre>
+        </section>
+
+        <section>
+          <h2>Injecting Dependencies</h2>
+
+          <p>Dependencies can be injected using TypeScript type annotations.</p>
+          <pre ng-non-bindable style="margin-top: 1.5em; font-size: 1.2em; line-height: 40px;"><foo-code>@Component(...)
+class ContactsApp {
+
+  contacts: Contact[];
+
+  constructor(<span style="color: #000;">contactsService: ContactsService</span>) {
+    this.contacts = contactsService.getContacts();
+  }
+}
+</foo-code></pre>
+        </section>
+
+        <section class="statement-slide" data-background="#123742">
+          <h3>Exercise 5: Services and DI</h3>
+        </section>
+
+        <section class="sub-section-slide" data-background-transition="slide" data-background="#80B4C4">
+          <h2>Component Routing</h2>
+        </section>
+
+        <section class="image-slide">
+          <img class="fragment" src="images/a2-routing-1.svg">
+        </section>
+
+        <section class="image-slide">
+          <img src="images/a2-routing-2.svg">
+        </section>
+
+        <section>
+          <h2>Components we have</h2>
+          <p>Our application consists of three components:</p>
+
+          <ul>
+            <li class="fragment"><strong>ContactsApp</strong> - The root component that is being bootstrapped</li>
+            <li class="fragment"><strong>ContactsList</strong> - A component to list contacts by provided data</li>
+            <li class="fragment"><strong>ContactDetail</strong> - A component to show a contact's details</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Adding Router providers</h2>
+
+          <p><code>ROUTER_PROVIDERS</code> configure the injector for router dependencies.</p>
+          <pre class="fragment" ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><code>import {ROUTER_PROVIDERS} from 'angular2/router';
+
+@Component({
+  ...
+  providers: [
+    ContactsService,
+    ROUTER_PROVIDERS
+  ]
+})
+class ContactsApp {}
+</code></pre>
+        </section>
+
+        <section>
+          <h2>Adding Router providers</h2>
+
+          <p><code>ROUTER_PROVIDERS</code> configure the injector for router dependencies.</p>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><foo-code>import {<span style="color: #000;">ROUTER_PROVIDERS</span>} from 'angular2/router';
+
+@Component({
+  ...
+  providers: [
+    ContactsService,
+    <span style="color: #000;">ROUTER_PROVIDERS</span>
+  ]
+})
+class ContactsApp {}
+</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Configuring Routes</h2>
+
+          <p>We use the <code>@RouteConfig()</code> decorator to configure routes for our application.</p>
+
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><code>import {RouteConfig} from 'angular2/router';
+
+@Component()
+@RouteConfig([
+  // route definition goes here
+])
+class ContactsApp {
+  ...
+}
+</code></pre>
+        
+        </section>
+
+        <section>
+          <h2>Configuring Routes</h2>
+
+          <p>We use the <code>@RouteConfig()</code> decorator to configure routes for our application.</p>
+
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><foo-code>import {<span style="color: #000;">RouteConfig</span>} from 'angular2/router';
+
+@Component()
+<span style="color: #000;">@RouteConfig([
+  // route definition goes here
+])</span>
+class ContactsApp {
+  ...
+}
+</foo-code></pre>
+        
+        </section>
+
+        <section>
+          <h2>Route Definition</h2>
+
+          <p>A <strong>Route Definition</strong> has a <code>path</code>, a <code>component</code>, and an optional name.</p>
+
+          <pre style="line-height: 40px; margin-top: 1.5em; font-size: 1.2em;" ><code>@RouteConfig([
+  {
+    path: '/',
+    component: ComponentClass,
+    name: 'ComponentName'
+  }
+])</code></pre>
+        </section>
+
+        <section>
+          <pre ng-non-bindable style="font-size: 0.57em!important; line-height: 40px;"><code>
+
+@Component()
+@RouteConfig([
+
+])
+class ContactsApp {
+  ...
+}
+</code></pre>
+        
+        </section>
+
+        <section>
+          <pre ng-non-bindable style="font-size: 0.57em!important; line-height: 40px;"><code>import {ContactListComponent} from '...';
+
+@Component()
+@RouteConfig([
+  {path: '/', component: ContactListComponent, name: 'ContactList'}
+])
+class ContactsApp {
+  ...
+}
+</code></pre>
+        
+        </section>
+
+        <section>
+          <h2>Displaying Components</h2>
+
+          <p><code>&lt;router-outlet&gt;</code> directive specifies a <strong>viewport</strong> where components should be loaded into.</p>
+
+          <pre ng-non-bindable style="line-height: 40px; margin-top: 1.5em;"><code>
+
+@Component({
+  selector: 'contacts-app',
+  template: '...',
+
+})
+@RouteConfig()
+class ContactsApp {...}</code></pre>
+        </section>
+
+        <section>
+          <h2>Displaying Components</h2>
+
+          <p><code>&lt;router-outlet&gt;</code> directive specifies a <strong>viewport</strong> where components should be loaded into.</p>
+
+          <pre ng-non-bindable style="line-height: 40px; margin-top: 1.5em;"><code>import {ROUTER_DIRECTIVES} from 'angular2/router';
+
+@Component({
+  selector: 'contacts-app',
+  template: '<router-outlet></router-outlet>',
+  directives: [ROUTER_DIRECTIVES]
+})
+@RouteConfig()
+class ContactsApp {...}</code></pre>
+        </section>
+
+        <section>
+          <h2>Displaying Components</h2>
+
+          <p><code>&lt;router-outlet&gt;</code> directive specifies a <strong>viewport</strong> where components should be loaded into.</p>
+
+          <pre ng-non-bindable style="line-height: 40px; margin-top: 1.5em;"><foo-code>import {<span style="color: #000;">ROUTER_DIRECTIVES</span>} from 'angular2/router';
+
+@Component({
+  selector: 'contacts-app',
+  template: '<span style="color: #000;">&lt;router-outlet&gt;&lt;/router-outlet&gt;</span>',
+  <span style="color: #000;">directives: [ROUTER_DIRECTIVES]</span>
+})
+@RouteConfig()
+class ContactsApp {...}</foo-code></pre>
+        </section>
+
+        <section class="statement-slide" data-background="#123742">
+          <h3>Exercise 6: Route to first component</h3>
+        </section>
+
+        <section>
+          <h2>Links with <code>RouterLink</code></h2>
+          <p><code>RouterLink</code> lets link to a specific part of our app.</p>
+          <pre class="fragment" ng-non-bindable style="font-size: 0.65em!important; line-height: 40px; margin-top: 1.5em;"><code>&lt;li *ngFor="#contact of contacts"&gt;
+
+    &lt;img src="{{contact.image}}"&gt;
+    &lt;span&gt;
+      {{contact.firstname}} {{contact.lastname}}
+    &lt;/span&gt;
+
+&lt;/li&gt;
+</code></pre>
+        </section>
+
+        <section>
+          <h2>Links with <code>RouterLink</code></h2>
+          <p><code>RouterLink</code> lets link to a specific part of our app.</p>
+          <pre ng-non-bindable style="font-size: 0.65em!important; line-height: 40px; margin-top: 1.5em;"><code>&lt;li *ngFor="#contact of contacts"&gt;
+  &lt;a [routerLink]="['/ContactDetail', {id: contact.id}]"&gt;
+    &lt;img src="{{contact.image}}"&gt;
+    &lt;span&gt;
+      {{contact.firstname}} {{contact.lastname}}
+    &lt;/span&gt;
+  &lt;/a&gt;
+&lt;/li&gt;
+</code></pre>
+        </section>
+
+        <section>
+          <h2>Links with <code>RouterLink</code></h2>
+          <p><code>RouterLink</code> lets link to a specific part of our app.</p>
+          <pre ng-non-bindable style="font-size: 0.65em!important; line-height: 40px; margin-top: 1.5em;"><foo-code>&lt;li *ngFor="#contact of contacts"&gt;
+  &lt;a <span style="color: #000;">[routerLink]="['/ContactDetail', {id: contact.id}]"</span>&gt;
+    &lt;img src="{{contact.image}}"&gt;
+    &lt;span&gt;
+      {{contact.firstname}} {{contact.lastname}}
+    &lt;/span&gt;
+  &lt;/a&gt;
+&lt;/li&gt;
+</foo-code></pre>
+        </section>
+
+        <section>
+          <h2><code>RouterLink</code> DSL</h2>
+          <pre class="fragment"><code>&lt;a [routerLink]="['/ContactDetail', {id: contact.id}]"&gt;</code></pre>
+          <pre class="fragment" ng-non-bindable style="font-size: 0.60em!important; line-height: 40px;"><code>@Component()
+@RouteConfig([
+  ...
+  {
+    path: '/contact/:id',
+    component: ContactDetailComponent, 
+    name: 'ContactDetail'
+  }
+])
+class ContactsApp {...}
+</code></pre>
+        </section>
+
+        <section>
+          <h2><code>RouterLink</code> DSL</h2>
+          <pre><foo-code>&lt;a [routerLink]="['<span style="color: #000">/</span>ContactDetail', {id: contact.id}]"&gt;</foo-code></pre>
+          <pre ng-non-bindable style="font-size: 0.60em!important; line-height: 40px;"><foo-code>@Component()
+@RouteConfig([
+  ...
+  {
+    path: '/contact/:id',
+    component: ContactDetailComponent,
+    name: 'ContactDetail'
+  }
+])
+<span style="color: #000;">class ContactsApp {...}</span>
+</foo-code></pre>
+        </section>
+
+        <section>
+          <h2><code>RouterLink</code> DSL</h2>
+          <pre><foo-code>&lt;a [routerLink]="['/<span style="color: #000">ContactDetail</span>', {id: contact.id}]"&gt;</foo-code></pre>
+          <pre ng-non-bindable style="font-size: 0.60em!important; line-height: 40px;"><foo-code>@Component()
+@RouteConfig([
+  ...
+  {
+    path: '/contact/:id',
+    component: ContactDetailComponent,
+    name: '<span style="color: #000;">ContactDetail</span>'
+  }
+])
+class ContactsApp {...}
+</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Retrieving <code>RouteParams</code></h2>
+
+          <p><code>RouteParams</code> is an <strong>injectable immutable</strong> map of parameters for the given route.
+
+          <pre class="fragment" ng-non-bindable style="margin-top: 1.5em; font-size: 1.2em; line-height: 40px;"><code>@Component(...)
+class ContactDetailComponent {
+
+  constructor(routeParams: RouteParams) {
+    // ask for routeParams.get('id')
+  }
+}
+</code></pre>
+        </section>
+
+        <section>
+          <h2>Retrieving <code>RouteParams</code></h2>
+
+          <p><code>RouteParams</code> is an <strong>injectable immutable</strong> map of parameters for the given route.
+
+          <pre ng-non-bindable style="margin-top: 1.5em; font-size: 1.2em; line-height: 40px;"><foo-code>@Component(...)
+class ContactDetailComponent {
+
+  constructor(<span style="color: #000;">routeParams: RouteParams</span>) {
+    // ask for routeParams.get('id')
+  }
+}
+</foo-code></pre>
+        </section>
+
+        <section class="statement-slide" data-background="#123742">
+          <h3>Exercise 7: Using RouteParams</h3>
+        </section>
+
+        <section class="sub-section-slide" data-background-transition="slide" data-background="#80B4C4">
+          <h2>Two-way Data Binding</h2>
+        </section>
+
+        <section>
+          <div class="fragment">
+            <h2><code>NgModel</code> Directive</h2>
+            <p><code>NgModel</code> implements two-way data binding by providing and combining property and event bindings.</p>
+          <pre ng-non-bindable style="margin-top: 1.5em; font-size: 1.2em; line-height: 40px;"><code>&lt;input [(ngModel)]="name"&gt;
+<p>Hello, {{name}}!</p>
+</code></pre>
+<div class="fragment">
+            <p>Or, the canonical version:</p>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px;"><code>&lt;input bindon-ngModel="name"&gt;
+<p>Hello, {{name}}!</p>
+</code></pre>
+</div>
+          </div>
+        </section>
+
+        <section>
+          <p>Two-way Binding can be implemented like this:
+          <pre ng-non-bindable style="margin-top: 1.5em; font-size: 1.2em; line-height: 40px;"><code>&lt;input [value]="name"
+  (input)="name=$event.target.value"&gt;</code></pre>
+          <div class="fragment">
+          <p style="margin-top: 1em;"><code>ngModel</code> hides repetitive expressions:</p>
+          <pre ng-non-bindable style="margin-top: 1em; font-size: 1.2em; line-height: 40px;"><code>&lt;input [ngModel]="name"
+  (ngModelChange)="name=$event"&gt;</code></pre>
+          </div>
+          <div class="fragment">
+          <p style="margin-top: 1em;">Shorthand syntax:</p>
+          <pre ng-non-bindable style="margin-top: 1em; font-size: 1.2em; line-height: 40px;"><code>&lt;input [(ngModel)]="name"&gt;</code></pre>
+          </div>
+        </section>
+
+        <section>
+          <p>Two-way Binding can be implemented like this:
+          <pre ng-non-bindable style="margin-top: 1.5em; font-size: 1.2em; line-height: 40px;"><foo-code>&lt;input [value]="<span style="color: #000;">name</span>"
+  (input)="<span style="color: #000;">name=$event.target.value</span>"&gt;</foo-code></pre>
+          <div>
+          <p style="margin-top: 1em;"><code>ngModel</code> hides repetitive expressions:</p>
+          <pre ng-non-bindable style="margin-top: 1em; font-size: 1.2em; line-height: 40px;"><foo-code>&lt;input [ngModel]="<span style="color: #000;">name</span>"
+  (ngModelChange)="<span style="color: #000;">name=$event</span>"&gt;</foo-code></pre>
+          </div>
+          <div>
+          <p style="margin-top: 1em;">Shorthand syntax:</p>
+          <pre ng-non-bindable style="margin-top: 1em; font-size: 1.2em; line-height: 40px;"><foo-code>&lt;input [(ngModel)]="<span style="color: #000;">name</span>"&gt;</foo-code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>Simple Forms</h2>
+
+          <p>Using <code>ngModel</code> we can already create simple forms.</p>
+          <pre ng-non-bindable style="margin-top: 1em; font-size: 1.2em; line-height: 40px;"><code>&lt;form&gt;
+
+  &lt;label&gt;Firstname:&lt;/label&gt;
+  &lt;input [(ngModel)]="contact.firstname"&gt;
+
+  &lt;label&gt;Lastname:&lt;/label&gt;
+  &lt;input [(ngModel)]="contact.lastname"&gt;
+  ...
+&lt;/form&gt;
+</code></pre>
+        </section>
+
+        <section class="statement-slide" data-background="#123742">
+          <h3>Exercise 8: Two-way Data Binding with ngModel</h3>
+        </section>
+
+        <section class="sub-section-slide" data-background-transition="slide" data-background="#80B4C4">
+          <h2>Fetching Data</h2>
+        </section>
+
+        <section>
+          <div class="fragment">
+          <h2>Http in Angular 2</h2>
+
+          <p>Angular 2 introduces a completely redesigned Http layer based on Observables.</p>
+
+          <ul style="margin-top: 1.5em;">
+            <li class="fragment">Event-driven stream of notifications</li>
+            <li class="fragment">Enables functional programming structures</li>
+            <li class="fragment">Allows to transform to promises if needed</li>
+          </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Configuring the Injector</h2>
+
+          <p><code>HTTP_PROVIDERS</code> configure the injector for http dependencies</p>
+          <pre class="fragment" ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><code>import {HTTP_PROVIDERS} from 'angular2/http';
+import 'rxjs/add/operator/map';
+
+@Component({
+  ...
+  providers: [HTTP_PROVIDERS]
+})
+export class ContactsApp {...}
+</code></pre>
+        </section>
+
+        <section>
+          <h2>Configuring the Injector</h2>
+
+          <p><code>HTTP_PROVIDERS</code> configure the injector for http dependencies</p>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><foo-code>import {<span style="color: #000;">HTTP_PROVIDERS</span>} from 'angular2/http';
+import 'rxjs/add/operator/map';
+
+@Component({
+  ...
+  providers: [<span style="color: #000;">HTTP_PROVIDERS</span>]
+})
+export class ContactsApp {...}
+</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Configuring the Injector</h2>
+
+          <p><code>HTTP_PROVIDERS</code> configure the injector for http dependencies</p>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><foo-code>import {HTTP_PROVIDERS} from 'angular2/http';
+<span style="color: #000;">import 'rxjs/add/operator/map';</span>
+
+@Component({
+  ...
+  providers: [HTTP_PROVIDERS]
+})
+export class ContactsApp {...}
+</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Http Service</h2>
+
+          <p><code>Http</code> is an injectable class with methods to perform http requests.</p>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><code>import {Http} from 'angular2/http';
+import {Injectable} from 'angular/core';
+
+@Injectable()
+class ContactsService {
+  constructor(private http: Http) {
+
+  }
+}</code></pre>
+        </section>
+
+        <section>
+          <h2>Http Service</h2>
+
+          <p><code>Http</code> is an injectable class with methods to perform http requests.</p>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><foo-code><span style="color: #000;">import {Http} from 'angular2/http';</span>
+import {Injectable} from 'angular/core';
+
+@Injectable()
+class ContactsService {
+  constructor(<span style="color: #000;">private http: Http</span>) {
+
+  }
+}</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Http Service</h2>
+
+          <p><code>Http</code> is an injectable class with methods to perform http requests.</p>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><foo-code>import {Http} from 'angular2/http';
+<span style="color: #000;">import {Injectable} from 'angular/core';</span>
+
+<span style="color: #000;">@Injectable()</span>
+class ContactsService {
+  constructor(private http: Http) {
+
+  }
+}</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Http and Observables</h2>
+          <p><code>Http</code> returns an Observable which will emit a single response it's received.</p>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><code>class ContactsService {
+  ...
+  getContacts() {
+    return this.http.get('http://myapi.com/contacts')
+      .map((res) => { return res.json(); })
+      .map((data) => { return data.items; });
+  }
+}</code></pre>
+        </section>
+
+        <section>
+          <h2>Http and Observables</h2>
+          <p><code>Http</code> returns an Observable which will emit a single response it's received.</p>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><foo-code>class ContactsService {
+  ...
+  getContacts() {
+    return <span style="color: #000;">this.http.get('http://myapi.com/contacts')</span>
+      .map((res) => { return res.json(); })
+      .map((data) => { return data.items; });
+  }
+}</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Http and Observables</h2>
+          <p><code>Http</code> returns an Observable which will emit a single response it's received.</p>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><foo-code>class ContactsService {
+  ...
+  getContacts() {
+    return this.http.get('http://myapi.com/contacts')
+      <span style="color: #000;">.map((res) => { return res.json(); })</span>
+      <span style="color: #000;">.map((data) => { return data.items; });</span>
+  }
+}</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Http and Observables</h2>
+          <p><code>Http</code> returns an Observable which will emit a single response it's received.</p>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><foo-code>class ContactsService {
+  ...
+  getContacts() {
+    return this.http.get('http://myapi.com/contacts')
+      <span style="color: #000;">.map(res => res.json())</span>
+      <span style="color: #000;">.map(data => data.items);</span>
+  }
+}</foo-code></pre>
+        </section>
+
+        <section>
+          <h2>Subscribing to Http</h2>
+
+          <p>We can subscribe to Observables using <code>.subscribe()</code></p>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><code>@Component(...)
+class ContactsListComponent {
+
+  constructor(contactsService: ContactsService) {
+    contactsService.getContacts()
+      .subscribe(contacts => this.contacts = contacts);
+  }
+
+}</code></pre>
+        </section>
+
+        <section>
+          <h2>Subscribing to Http</h2>
+
+          <p>We can subscribe to Observables using <code>.subscribe()</code></p>
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><foo-code>@Component(...)
+class ContactsListComponent {
+
+  constructor(contactsService: ContactsService) {
+    <span style="color: #000;">contactsService.getContacts()
+      .subscribe(contacts => this.contacts = contacts);</span>
+  }
+
+}</foo-code></pre>
+
+        </section>
+
+        <section>
+          <h2>Safe Navigation Operator</h2>
+          <p>Angular throws a null reference error when null objects are accessed:</p>
+
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><code>The null contact's name is {{nullContact.firstname}}</code></pre>
+
+          <div class="fragment">
+            <p style="margin-top: 1em;">Results in: </p>
+            <pre ng-non-bindable style="font-size: 0.6em!important; line-height: 40px; margin-top: 1.5em;"><code>TypeError: Cannot read property 'firstname' of null in [null]</code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>Safe Navigation Operator</h2>
+          <p>The "safe navigation" operator (<code>?.</code>) is a convenient way to guard against nulls in property paths</p>
+
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><code>The null contact's name is {{nullContact?.firstname}}</code></pre>
+
+        </section>
+
+        <section>
+          <h2>Safe Navigation Operator</h2>
+          <p>The "save navigation" operator (<code>?.</code>) is a convenient way to guard against nulls in property paths</p>
+
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><foo-code>The null contact's name is {{nullContact<span style="color: #000;">?.</span>firstname}}</foo-code></pre>
+
+        </section>
+
+        <section class="statement-slide" data-background="#123742">
+          <h3>Exercise 9: Fetching data using Http</h3>
+        </section>
+
+        <section class="sub-section-slide" data-background-transition="slide" data-background="#80B4C4">
+          <h2>Posting Data</h2>
+        </section>
+
+        <section>
+          <div class="fragment">
+            <h2>Put Requests</h2>
+
+            <p><code>Http.put()</code> performs a request with the <code>put</code> method</p>
+
+            <pre ng-non-bindable style="font-size: 0.7em!important; line-height: 40px; margin-top: 1.5em;"><code>class ContactsService {
+  ...
+  updateContact(contact: Contact) {
+    let url = `myapi.com/contacts/{$contact.id}`;
+    let data = JSON.stringify(contact);
+    let headers = new Headers({...});
+
+    return this.http.put(url, data, { headers });
+  }
+}</code></pre>
+          </div>
+        </section>
+
+        <section>
+            <h2>Put Requests</h2>
+
+            <p><code>Http.put()</code> performs a request with the <code>put</code> method</p>
+
+            <pre ng-non-bindable style="font-size: 0.7em!important; line-height: 40px; margin-top: 1.5em;"><foo-code>class ContactsService {
+  ...
+  updateContact(contact: Contact) {
+    let url = `myapi.com/contacts/{$contact.id}`;
+    let data = JSON.stringify(contact);
+    let headers = new Headers({...});
+
+    return <span style="color: #000;">this.http.put(url, data, { headers });</span>
+  }
+}</foo-code></pre>
+        </section>
+
+        <section>
+            <h2>Put Requests</h2>
+
+            <p><code>Http.put()</code> performs a request with the <code>put</code> method</p>
+
+            <pre ng-non-bindable style="font-size: 0.7em!important; line-height: 40px; margin-top: 1.5em;"><foo-code>class ContactsService {
+  ...
+  updateContact(contact: Contact) {
+    <span style="color: #000;">let url = `myapi.com/contacts/{$contact.id}`;</span>
+    let data = JSON.stringify(contact);
+    let headers = new Headers({...});
+
+    return this.http.put(<span style="color: #000;">url</span>, data, { headers });
+  }
+}</foo-code></pre>
+        </section>
+
+        <section>
+            <h2>Put Requests</h2>
+
+            <p><code>Http.put()</code> performs a request with the <code>put</code> method</p>
+
+            <pre ng-non-bindable style="font-size: 0.7em!important; line-height: 40px; margin-top: 1.5em;"><foo-code>class ContactsService {
+  ...
+  updateContact(contact: Contact) {
+    let url = `myapi.com/contacts/{$contact.id}`;
+    <span style="color: #000;">let data = JSON.stringify(contact);</span>
+    let headers = new Headers({...});
+
+    return this.http.put(url, <span style="color: #000;">data</span>, { headers });
+  }
+}</foo-code></pre>
+        </section>
+
+        <section>
+            <h2>Put Requests</h2>
+
+            <p><code>Http.put()</code> performs a request with the <code>put</code> method</p>
+
+            <pre ng-non-bindable style="font-size: 0.7em!important; line-height: 40px; margin-top: 1.5em;"><foo-code>class ContactsService {
+  ...
+  updateContact(contact: Contact) {
+    let url = `myapi.com/contacts/{$contact.id}`;
+    let data = JSON.stringify(contact);
+    <span style="color: #000;">let headers = new Headers({...});</span>
+
+    return this.http.put(url, data, <span style="color: #000;">{ headers }</span>);
+  }
+}</foo-code></pre>
+        </section>
+
+        <section>
+            <h2>Put Requests</h2>
+
+            <p><code>Http.put()</code> performs a request with the <code>put</code> method</p>
+
+            <pre ng-non-bindable style="font-size: 0.7em!important; line-height: 40px; margin-top: 1.5em;"><code>class ContactsService {
+  ...
+  updateContact(contact: Contact) {
+    let url = `myapi.com/contacts/{$contact.id}`;
+    let data = JSON.stringify(contact);
+    let headers = new Headers({...});
+
+    return this.http.put(url, data, { headers });
+  }
+}</code></pre>
+        </section>
+
+        <section class="statement-slide" data-background="#123742">
+          <h3>Exercise 10: Sending data using Http</h3>
+        </section>
+
+        <section class="sub-section-slide" data-background-transition="slide" data-background="#80B4C4">
+          <h2>Using Async Pipe</h2>
+        </section>
+
+        <section>
+          <div class="fragment">
+            <h2>Pipes</h2>
+
+            <p>A pipe takes in data as input and transforms it to a desired output.</p>
+
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><code>@Component({
+  selector: 'contact-detail',
+  template: `
+    ...
+    <span>Birthday:</span>
+    <span>{{contact?.dateOfBirth | date}}</span>
+  `
+})
+class ContactDetailComponent { }</code></pre>
+          </div>
+        </section>
+
+        <section>
+            <h2>Pipes</h2>
+
+            <p>A pipe takes in data as input and transforms it to a desired output.</p>
+
+          <pre ng-non-bindable style="font-size: 1.2em; line-height: 40px; margin-top: 1.5em;"><foo-code>@Component({
+  selector: 'contact-detail',
+  template: `
+    ...
+    &lt;span&gt;Birthday:&lt;/span&gt;
+    &lt;span&gt;<span style="color: #000;">{{contact?.dateOfBirth | date}}</span>&lt;/span&gt;
+  `
+})
+class ContactDetailComponent { }</foo-code></pre>
+        </section>
+
+        <section>
+        <h2>AsyncPipe</h2>
+
+        <p>The Async pipe can receive a Promise or Observable as input and subscribe to the input automatically.</p>
+        <pre ng-non-bindable style="font-size: 1.2em; line-height: 35px; margin-top: 1.5em;"><code>import {Observable} from 'rxjs/Observable';
+
+@Component(...)
+class ContactsListComponent {
+
+  contacts: Observable&lt;Array&lt;Contact&gt;&gt;;
+
+  constructor(contactsService: ContactsService) {
+    this.contacts = contactsService.getContacts();
+  }
+}</code></pre>
+        </section>
+
+        <section>
+        <h2>AsyncPipe</h2>
+
+        <p>The Async pipe can receive a Promise or Observable as input and subscribe to the input automatically.</p>
+        <pre ng-non-bindable style="font-size: 1.2em; line-height: 35px; margin-top: 1.5em;"><foo-code><span style="color: #000;">import {Observable} from 'rxjs/Observable';</span>
+
+@Component(...)
+class ContactsListComponent {
+
+  contacts: <span style="color: #000;">Observable&lt;Array&lt;Contact&gt;&gt;;</span>
+
+  constructor(contactsService: ContactsService) {
+    <span style="color: #000;">this.contacts = contactsService.getContacts();</span>
+  }
+}</foo-code></pre>
+        </section>
+
+        <section>
+        <h2>AsyncPipe</h2>
+
+        <p>The Async pipe can receive a Promise or Observable as input and subscribe to the input automatically.</p>
+        <pre ng-non-bindable style="font-size: 1.2em; line-height: 35px; margin-top: 1.5em;"><code>@Component({
+  template: `
+    &lt;ul&gt;
+      &lt;li *ngFor="#contact of contacts | async"&gt;
+        ...
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  `
+})
+class ContactsListComponent {...}</code></pre>
+        </section>
+
+        <section>
+        <h2>AsyncPipe</h2>
+
+        <p>The Async pipe can receive a Promise or Observable as input and subscribe to the input automatically.</p>
+        <pre ng-non-bindable style="font-size: 1.2em; line-height: 35px; margin-top: 1.5em;"><foo-code>@Component({
+  template: `
+    &lt;ul&gt;
+      &lt;li *ngFor="<span style="color: #000;">#contact of contacts | async</span>"&gt;
+        ...
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  `
+})
+class ContactsListComponent {...}</foo-code></pre>
+        </section>
+
+        <section class="statement-slide" data-background="#123742">
+          <h3>Exercise 11: Async Pipe</h3>
+        </section>
+
+        <section class="thoughtram-slide" data-background="#f0f0f0">
+          <img alt="thoughtram brain" src="img/thoughtram-brain-black.png">
+          <img alt="Extend your memory." src="img/thoughtram-logo-line-with-tag-line.png">
+        </section>
+      </div>
+
+    </div>
+    <script src="js/app.js"></script>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/reveal.config.js"></script>
+
+  </body>
+</html>
