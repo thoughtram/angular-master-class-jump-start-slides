@@ -139,7 +139,7 @@ img {
       content: '';
       width: 180px;
       height: 130px;
-      background-image: url("img/thoughtram-brain.png");
+      background-image: url("../../img/thoughtram-brain.png");
       background-repeat: no-repeat;
       background-size: 180px auto;
       background-position: center;
