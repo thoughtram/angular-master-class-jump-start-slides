@@ -1,22 +1,12 @@
 {
-  "name": "reveal.js",
-  "version": "3.2.0",
-  "description": "The HTML Presentation Framework",
-  "homepage": "http://lab.hakim.se/reveal-js",
-  "subdomain": "revealjs",
+  "name": "angular2-master-class-jump-start-slides",
+  "version": "0.0.0",
+  "description": "Slides for the Angular 2 Jump Start by thoughtram",
+  "homepage": "http://thoughtram.io/angular2-master-class-jump-start-slides/#/",
   "main": "js/reveal.js",
   "scripts": {
     "test": "grunt test",
     "start": "grunt serve"
-  },
-  "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "http://hakim.se"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
   },
   "engines": {
     "node": "~4.1.1"
@@ -40,6 +30,6 @@
     "grunt": "~0.4.5",
     "node-sass": "~3.3.3"
   },
-  
-  "license": "MIT"
+
+  "license": "thoughtram Training Material License (TTML 1.0)"
 }
